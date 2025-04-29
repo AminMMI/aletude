@@ -38,18 +38,20 @@ require 'includes/init.php';
         <li><a href="services.php">Nos Services</a></li>
         <li><a href="tarif.php">Tarifs</a></li>
         <li><a href="apropos.php">À propos</a></li>
-        <li><a href="#">Exercice</a></li>
-        <li><a href="#">Cours</a></li>
+
         
-        <?php if (session_status() === PHP_SESSION_NONE) {
+      <?php if (session_status() === PHP_SESSION_NONE) {
     session_start();
 }?>
-         <?php if (isset($_SESSION['email'])) : ?>
+         <?php if (isset($_SESSION['user'])) : ?>
+          <li><a href="#">Exercice</a></li>
+          <li><a href="#">Cours</a></li>
             <li>
                 <a href="profil.php">
                     <img src="images/profil.jpg" alt="Profil" style="height: 30px; width: 30px; border-radius: 50%;">
                 </a>
             </li>
+       
         <?php else : ?>
             <li><a href="tools/login.php">Connexion</a></li>
         <?php endif; ?>
